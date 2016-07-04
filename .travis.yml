@@ -1,7 +1,8 @@
-language: node_js
-install:
-  - npm install
-  - npm install jshint
 sudo: false
+language: node_js
 node_js:
   - stable
+after_script:
+  - npm run coveralls
+git:
+  depth: 10
