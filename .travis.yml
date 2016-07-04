@@ -1,12 +1,12 @@
-sudo: required
 language: node_js
 
 node_js:
-
 - stable
 
 install:
 
-- npm install grunt-cli -g
+before_script:
+  - npm install -g gulp
+script: gulp
 
-- npm install
+npm install
