@@ -1,6 +1,7 @@
 sudo: false
 language: node_js
 before_script:
+  - npm init
   - npm install -g gulp
 node_js:
   - stable
