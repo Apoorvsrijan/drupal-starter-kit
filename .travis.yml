@@ -5,7 +5,5 @@ node_js:
 
 before_script:
   - npm install -g gulp
-  - npm install --global gulp-cli
-  - npm init
-  - npm install --save-dev gulp
+
 script: gulp
