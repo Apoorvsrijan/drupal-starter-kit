@@ -1,11 +1,9 @@
+sudo: false
 language: node_js
-
 node_js:
+  - stable
 
-- stable
+before_script:
+  - npm install -g gulp
 
-install:
-
-- npm install grunt-cli -g
-
-- npm install
+script: gulp
