@@ -25,7 +25,7 @@ gulp.task('csslint', function() {
     .pipe(csslint.reporter('fail'));
 });
 
-    gulp.task('scsslint', function () {
+gulp.task('scsslint', function () {
      return gulp.src('docroot/sites/all/themes/sass/**/*.s+(a|c)ss')
      .pipe(sasslint())
      .pipe(sasslint.format())
