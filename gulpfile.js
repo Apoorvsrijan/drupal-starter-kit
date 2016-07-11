@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var eslint = require('gulp-eslint');
 var es = require('event-stream');
 var csslint = require('gulp-csslint');
+var sass = require('gulp-sass');
+var sasslint = require('gulp-sass-lint');
 
 gulp.task('jslint', function() {
   var modules = gulp.src('docroot/sites/all/modules/custom/**/*.js');
@@ -23,7 +25,15 @@ gulp.task('csslint', function() {
     .pipe(csslint.reporter('fail'));
 });
 
+    gulp.task('scsslint', function () {
+     return gulp.src('docroot/sites/all/themes/sass/**/*.s+(a|c)ss')
+     .pipe(sasslint())
+     .pipe(sasslint.format())
+     .pipe(sasslint.failOnError());
+ });
+
 gulp.task('default', [
   'jslint',
-  'csslint'
+  'csslint',
+  'scsslint'
 ]);
